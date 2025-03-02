@@ -8,7 +8,7 @@ import { useGetBlogList } from "../components/api/api";
 
 const BlogPageRoutes = () => {
   const { limit, onPaginationChange, page, pagination } = usePagination();
-  const [keyword, setKeyword] = useState<string>("");
+  const [keyword] = useState<string>("");
   const queryString = useDebounce(keyword, 500);
   const [data, setData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);

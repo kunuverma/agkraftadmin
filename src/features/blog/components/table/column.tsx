@@ -27,7 +27,7 @@ export const columns: ColumnDef<BlogType>[] = [
       return <div className="flex flex-row">Image</div>;
     },
     // "Image"
-    cell: ({ row }) => (
+    cell: () => (
       <div className="">
         <img
           src={imageUrl}
@@ -74,6 +74,6 @@ export const columns: ColumnDef<BlogType>[] = [
   {
     accessorKey: "detail",
     header: "Details",
-    cell: ({ row }) => <UpdateBlog id={row.getValue("id")} />
+    cell: () => <UpdateBlog />
   },
 ];

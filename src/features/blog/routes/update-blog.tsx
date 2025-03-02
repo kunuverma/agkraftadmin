@@ -3,7 +3,6 @@ import { FaRectangleList } from "react-icons/fa6";
 import {
   Dialog,
   DialogContent,
-  DialogFooter,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
@@ -13,9 +12,6 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-interface DataType {
-  id: number | null | undefined;
-}
 
 const languageSchema = z.object({
   title: z.string().nonempty("title name is required"),
@@ -23,12 +19,9 @@ const languageSchema = z.object({
   status: z.boolean(),
 });
 
-export const UpdateBlog = ({ id }: DataType) => {
+export const UpdateBlog = () => {
   const [open, setOpen] = useState(false);
   const {
-    control,
-    handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(languageSchema),
@@ -39,9 +32,6 @@ export const UpdateBlog = ({ id }: DataType) => {
     },
   });
 
-  const onSubmit = async (data: any) => {
-    // updateLanguageMutation.mutate({ id, ...data });
-  };
 
   const handleDialogOpen = () => {
     setOpen(true);
