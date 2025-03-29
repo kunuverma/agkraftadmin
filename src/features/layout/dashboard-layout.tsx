@@ -5,6 +5,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import TopNavbar from "./top-navbar";
 import { FaBlog } from "react-icons/fa";
 import { House } from "lucide-react";
+import { FaWpforms } from "react-icons/fa";
 type MenuItem = {
   name: string;
   path: string;
@@ -17,6 +18,18 @@ const items: MenuItem[] = [
     name: "Dashboard",
     path: "/",
     icon: <House />,
+    children: [],
+  },
+  {
+    name: "Form",
+    path: "/form",
+    icon: <FaWpforms />,
+    children: [],
+  },
+  {
+    name: "Career Form",
+    path: "/careerform",
+    icon: <FaWpforms />,
     children: [],
   },
   {
